@@ -11,10 +11,10 @@
 
 	// Split team into current and previous leaders
 	const currentLeaders = data.team.filter((team) =>
-		isOctober ? team.year == currentYear + 1 : team.year == currentYear
+		isOctober() ? team.year == currentYear + 1 : team.year == currentYear
 	);
 	const previousLeaders = data.team.filter((team) =>
-		isOctober ? team.year == currentYear : team.year < currentYear
+		isOctober() ? team.year <= currentYear : team.year < currentYear
 	);
 
 	// State to manage active tab
